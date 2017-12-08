@@ -1,3 +1,7 @@
+// Custom Script
+// by : hendra814
+// email : hendra762002@yahoo.com / hendra8124@gmail.com
+//========================VIP SYSTEM========================
 prontera,140,226,6	script	VIP System	109,{
 if (getgroupid()<4) {
 goto Prem;
