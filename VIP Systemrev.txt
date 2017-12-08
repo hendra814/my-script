@@ -187,63 +187,63 @@ set .@week,5000;
 set .@month,20000;
 if (getgroupid()>60) {
 mes "[ VIP NPC ]";
-mes "Maaf,GM staff tidak dapat menggunakan fitur ini.";
+mes "Sorry,GM staff couldn't use this feature.";
 close;
 }
 
 mes "[ VIP NPC ]";
-mes "Berikut biaya untuk akses VIP.";
-mes "24 Jam "+.@day+" cash point";
-mes "1 Minggu "+.@week+" cash point";
-mes "1 Bulan "+.@month+" cash point";
-mes "Cash points kamu sekarang "+#CASHPOINTS+".";
+mes "Here the price to get VIP Status.";
+mes "24 Hours "+.@day+" cash point";
+mes "1 Week "+.@week+" cash point";
+mes "1 Month "+.@month+" cash point";
+mes "You're current cash point now "+#CASHPOINTS+".";
 next;
-switch(select("Daftar 24 Jam:Daftar 1 Minggu:Daftar 1 Bulan:Tidak, Terima kasih.")) {
+switch(select("Register 24 Hours:Register 1 Week:Register 1 Month:No, Thank You.")) {
 case 1:
 if (#CASHPOINTS < .@day) {
 mes "[ VIP NPC ]";
-mes "Cash points kamu tidak cukup,";
-mes ""+.@day+" cash point untuk menggunakan fitur ini.";
+mes "Your Cash points not enough.";
+mes ""+.@day+" cash point to register VIP Status.";
 close;
 }
 //set #CASHPOINTS, #CASHPOINTS - .@day;
 atcommand "@vip +24h "+strcharinfo(0)+"";
 mes "[ VIP NPC ]";
-mes "Selamat menikmati layanan VIP.";
-dispbottom "Cash points kamu sekarang "+#CASHPOINTS+".";
+mes "Enjoy your VIP Status.";
+dispbottom "You're current cash point now "+#CASHPOINTS+".";
 close;
 
 case 2:
 if (#CASHPOINTS < .@week) {
 mes "[ VIP NPC ]";
-mes "Cash points kamu tidak cukup,";
-mes ""+.@week+" cash point untuk menggunakan fitur ini.";
+mes "Your Cash points not enough.";
+mes ""+.@week+" cash point to register VIP Status.";
 close;
 }
 //set #CASHPOINTS, #CASHPOINTS - .@week;
 atcommand "@vip +7d "+strcharinfo(0)+"";
 mes "[ VIP NPC ]";
-mes "Selamat menikmati layanan VIP.";
-dispbottom "Cash points kamu sekarang "+#CASHPOINTS+".";
+mes "Enjoy your VIP Status.";
+dispbottom "You're current cash point now "+#CASHPOINTS+".";
 close;
 
 case 3:
 if (#CASHPOINTS < .@month) {
 mes "[ VIP NPC ]";
-mes "Cash points kamu tidak cukup,";
-mes ""+.@month+" cash point untuk menggunakan fitur ini.";
+mes "Your Cash points not enough.";
+mes ""+.@month+" cash point to register VIP Status.";
 close;
 }
 //set #CASHPOINTS, #CASHPOINTS - .@month;
 atcommand "@vip +1m "+strcharinfo(0)+"";
 mes "[ VIP NPC ]";
-mes "Selamat menikmati layanan VIP.";
-dispbottom "Cash points kamu sekarang "+#CASHPOINTS+".";
+mes "Enjoy your VIP Status.";
+dispbottom "You're current cash point now "+#CASHPOINTS+".";
 close;
 
 case 4:
 mes "[ VIP NPC ]";
-mes "Sampai lain waktu.";
+mes "See you next time.";
 close;
 }
 
