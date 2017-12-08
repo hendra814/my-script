@@ -1,0 +1,63 @@
+// Custom Script
+// by : Hendra814
+// Ym : hendra762002@yahoo.com
+//========================SPAWN MONSTER========================
+prontera,143,179,6	script	Monster Attack	814,{
+
+setarray .bc_map$[0],"alberta","aldebaran","geffen","izlude","morocc","payon","prontera";
+set .map$,rand(0,getarraysize(.bc_map$)-1);
+
+mes "[Ygiel]";
+if(getgmlevel() < 50) {
+	if(.Events == 0) mes "There is no event at the moment!";
+	else {
+		mes "Event running now on map "+.bc_map$[.map$]+"";
+	}
+	end;
+}
+mes "Welcome GM.";
+if(.Events == 0) mes "There is no event at the moment!";
+	else {
+		mes "Event running now on map "+.bc_map$[.map$]+"";
+	}
+next;
+menu 	"Start Event",Start,
+		"Turn off Event",Turn_off;
+
+	Start:
+		set .Events,1;
+		announce "Come on all warriors, bad monster attack "+.bc_map$[.map$]+"",bc_all;
+		monster ".map$",0,0,"attacker",1867,10,"mobkill::OnMobKilled";	//banshee
+		monster ".map$",0,0,"attacker",2085,10,"mobkill::OnMobKilled";	//antler scaraba
+		monster ".map$",0,0,"attacker",2137,10,"mobkill::OnMobKilled";	//miming
+		monster ".map$",0,0,"attacker",2221,10,"mobkill::OnMobKilled";	//Randel
+		monster ".map$",0,0,"attacker",1956,1,"mobkill::OnMobKilled";	//naght sieger
+		monster ".map$",0,0,"attacker",1313,18,"mobkill::OnMobKilled";	//mobster
+		monster ".map$",0,0,"attacker",1371,10,"mobkill::OnMobKilled";	//fake angel
+		monster ".map$",0,0,"attacker",1755,10,"mobkill::OnMobKilled";	//skeggiold
+		monster ".map$",0,0,"attacker",2224,10,"mobkill::OnMobKilled";	//champ
+		monster ".map$",0,0,"attacker",1502,1,"mobkill::OnMobKilled";	//Pori
+		mes "Event has been started";
+		sleep 360000;
+		announce "Event has ended.",bc_all;
+		killmonster ".map$","All";
+		set .Events,0;
+		end;
+	Turn_off:
+		mes "Ok, see you next time GM";
+		goto EndEvent;
+		end;
+	
+EndEvent:
+	if(.Event) announce "The Event is over!",bc_all;
+	killmonster ".map$","All";
+	set .Events,0;
+	end;
+}
+
+-	script	mobkill	-1,{
+end;
+OnMobKilled:
+getitem 7539,1;
+end;
+}
