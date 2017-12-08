@@ -1,3 +1,7 @@
+// Custom Script
+// by : hendra814
+// email : hendra762002@yahoo.com / hendra8124@gmail.com
+//========================SKULL TRADER========================
 prontera,147,165,5	script	Skull Exchanger	89,{
 
 set .@amount, countitem(7420);
