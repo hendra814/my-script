@@ -1,0 +1,41 @@
+prontera,147,165,5	script	Skull Exchanger	89,{
+
+set .@amount, countitem(7420);
+if (.@amount == 0) {
+mes "[ Skull Exchanger ]";
+mes "There is no skull in your inventory.";
+mes "Your current Cash points now "+#CASHPOINTS+".";
+dispbottom "Your current Cash points now "+#CASHPOINTS+".";
+close;
+}
+mes "[ Skull Exchanger ]";
+mes "Trade ^0000FF" + .@amount + "^000000 skull for ^0000FF" +.@amount*10 + "^000000 CashPoints?";
+next;
+switch(select("Yes, All of it:Yes, but not all of it:No")) {
+case 1:
+delitem 7420,.@amount;
+set #CASHPOINTS, #CASHPOINTS + (.@amount * 10);
+mes "[ Skull Exchanger ]";
+mes "Your current Cash points now "+#CASHPOINTS+".";
+dispbottom "Your current Cash points now "+#CASHPOINTS+".";
+close;
+
+case 2:
+mes "[ Skull Exchanger ]";
+mes "How many skulls do you want to exchange into cash points?";
+mes "1 skull will get 10 cash points";
+next;
+input .@a,.@amount;
+delitem 7420,.@a;
+set #CASHPOINTS, #CASHPOINTS + (.@a * 10);
+mes "[ Skull Exchanger ]";
+mes "Your current Cash points now "+#CASHPOINTS+".";
+dispbottom "Your current Cash points now "+#CASHPOINTS+".";
+close;
+
+case 3:
+mes "[ Skull Exchanger ]";
+mes "Ok,Bye Bye.";
+close;
+}
+}
