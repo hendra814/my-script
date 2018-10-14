@@ -289,5 +289,6 @@ yuno,164,50,4	duplicate(VIP System)	VIP System#yuno	109
 brasilis,199,225,4	duplicate(VIP System)	VIP System#bra	109
 dewata,202,190,6	duplicate(VIP System)	VIP System#dew	109
 dicastes01,196,197,6	duplicate(VIP System)	VIP System#dic	109
+harboro1,286,195,4	duplicate(VIP System)	VIP System#har	109
 malangdo,137,116,6	duplicate(VIP System)	VIP System#mal	109
 malaya,228,195,4	duplicate(VIP System)	VIP System#ma	109
